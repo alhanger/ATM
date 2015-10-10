@@ -5,16 +5,16 @@ import java.util.Scanner;
  */
 public class Account {
     String name;
-    String option;
     double balance;
     Scanner scanner = new Scanner(System.in);
 
     void accountName() throws Exception {
+        System.out.println("Welcome to the ATM.");
         System.out.println("Please enter your name.");
         name = scanner.nextLine();
         System.out.println("Hello, " + name);
         if (name.equals("")) {
-            throw new Exception("Please enter a name to access your account or to create a new account.");
+            throw new Exception("Please enter a name to access your account or create a new account.");
         }
     }
 
@@ -46,8 +46,9 @@ public class Account {
         System.out.println("[1] Check My Balance");
         System.out.println("[2] Withdraw Funds");
         System.out.println("[3] Remove Account");
-        System.out.println("[4] Cancel");
-        option = scanner.nextLine();
+        System.out.println("[4] Logout");
+        System.out.println("[5] Cancel");
+        String option = scanner.nextLine();
         int optionNum = Integer.valueOf(option);
         if (optionNum == 1) { //returns balance
             System.out.println("Your balance is $" + balance + ".");
@@ -57,7 +58,7 @@ public class Account {
             String amount = scanner.nextLine();
             int amountNum = Integer.valueOf(amount);
             if (amountNum > balance) { //error message for inadequate funds
-                throw new Exception("I'm sorry, you do not have adequate funds.");
+                System.out.println("I'm sorry, you do not have adequate funds.");
             }
             else if (amountNum <= balance && amountNum > 0) { //withdraws funds and returns new balance
                 System.out.println("Please withdraw your cash below.");
@@ -71,8 +72,13 @@ public class Account {
             ATM.accounts.remove(name);
             System.out.println("Thanks for using bank of Iron Yard. Please come again.");
             System.exit(0);
+
         }
-        else if (optionNum == 4) { //exits system
+        else if (optionNum == 4) { //logs out the user and restarts the program
+            System.out.println("Logging out...");
+            accountName();
+        }
+        else if (optionNum == 5) { //exits system
             System.out.println("Thank you. Please come again.");
             System.exit(0);
             }
