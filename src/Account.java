@@ -29,10 +29,12 @@ public class Account {
                 double depositNum = Double.valueOf(deposit); //converts deposit into a double
                 balance = depositNum;
                 ATM.accounts.put(name, balance); //adds new account to hashmap
-            } else if (s.equals("n")) { //Exits system if user chooses not to create account
+            }
+            else if (s.equals("n")) { //Exits system if user chooses not to create account
                 System.out.println("Thank you. Please come again.");
                 System.exit(0);
-            } else throw new Exception("I'm sorry, that is not a valid option");
+            }
+            else throw new Exception("I'm sorry, that is not a valid option");
         }
         else if (ATM.accounts.containsKey(name)) { //if name is found, runs chooseOption
             chooseOption();
