@@ -57,7 +57,7 @@ public class Account {
             if (amountNum > balance) { //error message for inadequate funds
                 throw new Exception("I'm sorry, you do not have adequate funds.");
             }
-            else if (amountNum <= balance && amountNum != 0) { //withdraws funds and returns new balance
+            else if (amountNum <= balance && amountNum > 0) { //withdraws funds and returns new balance
                 System.out.println("Please withdraw your cash below.");
                 balance = balance - amountNum;
                 System.out.println("Your new balance is $" + balance + ".");
@@ -76,5 +76,3 @@ public class Account {
             }
         }
     }
-
-// WORK ON REMOVE ACCOUNT
