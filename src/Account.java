@@ -71,7 +71,7 @@ public class Account {
             System.exit(0);
         }
         else if (optionNum == 4) { //exits system
-            System.out.println("Thank you and please come again.");
+            System.out.println("Thank you. Please come again.");
             System.exit(0);
             }
         }
