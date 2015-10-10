@@ -70,7 +70,7 @@ public class Account {
         else if (optionNum == 3) { //removes account
             System.out.println("Removing account: " + name);
             ATM.accounts.remove(name);
-            System.out.println("Thanks for using bank of Iron Yard. Please come again.");
+            System.out.println("Thanks for using Bank of Iron Yard. Please come again.");
             System.exit(0);
 
         }
