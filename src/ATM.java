@@ -5,7 +5,7 @@ import java.util.HashMap;
  */
 public class ATM {
     public static HashMap<String, Double> accounts = new HashMap<>();
-    public static void run() throws Exception {
+    public static void main(String[] args) throws Exception {
 
         Account account = new Account();
 
