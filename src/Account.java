@@ -28,7 +28,7 @@ public class Account {
                 String deposit = scanner.nextLine(); //takes user input and stores it in deposit variable
                 double depositNum = Double.valueOf(deposit); //converts deposit into a double
                 balance = depositNum;
-                ATM.accounts.put(name, balance); //adds new account to hashmap
+                ATM.accounts.put(name, depositNum); //adds new account to hashmap
             }
             else if (s.equals("n")) { //Exits system if user chooses not to create account
                 System.out.println("Thank you. Please come again.");
@@ -50,6 +50,7 @@ public class Account {
         System.out.println("[5] Cancel");
         String option = scanner.nextLine();
         int optionNum = Integer.valueOf(option);
+        balance = ATM.accounts.get(name);
         if (optionNum == 1) { //returns balance
             System.out.println("Your balance is $" + balance + ".");
         }
